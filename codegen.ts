@@ -1,6 +1,5 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 import * as dotenv from 'dotenv';
-import { QueryDocumentKeys } from 'graphql/language/ast';
 
 dotenv.config();
 

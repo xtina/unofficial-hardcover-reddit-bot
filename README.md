@@ -1,6 +1,6 @@
-# u/hardcover-bot
+# u/hardcoverbot
 
-Inspired by [reddit-goodreads-bot](https://github.com/rodohanna/reddit-goodreads-bot) and adapted to use the [Hardcover](https://hardcover.app/) GQL API.
+Inspired by [reddit-goodreads-bot](https://github.com/rodohanna/reddit-goodreads-bot) and adapted to use the [Hardcover](https://hardcover.app/) GQL API. This is built on top of Reddit's [Devvit](https://developers.reddit.com/docs/) platform.
 
 ## I don't work for Hardcover
 
@@ -24,3 +24,9 @@ If someone makes a comment like:
 `Maybe you should check out h{{Dark Matter}}`
 
 The bot will add a comment with all of the information listed above AND the Hardcover description.
+
+### Why hardcover.app?
+
+They have a public API and nice [docs](https://docs.hardcover.app/api/getting-started/)
+
+Storygraph does not have a public API and Goodreads has shut down its public API. 

@@ -14,36 +14,33 @@ Devvit.configure({
   },
 });
 
-Devvit.addSettings({
+Devvit.addSettings([{
   name: 'hardcover-api-key-1',
   label: 'Hardcover API Key part 1',
   type: 'string',
   isSecret: true,
   scope: 'app',
-});
-
-Devvit.addSettings({
+},{
   name: 'hardcover-api-key-2',
   label: 'Hardcover API Key part 2',
   type: 'string',
   isSecret: true,
   scope: 'app',
-});
-
-Devvit.addSettings({
+},
+{
   name: 'hardcover-api-key-3',
   label: 'Hardcover API Key part 3',
   type: 'string',
   isSecret: true,
   scope: 'app',
-});
-
-Devvit.addSettings({
+},
+{
   name: 'hardcover-api-url',
   label: 'Hardcover API URL',
   type: 'string',
   scope: 'app',
-});
+}]);
+
 dotenv.config();
 
 function validateComment(event: TriggerEventType['CommentCreate']): string | null {
@@ -56,6 +53,9 @@ function validateComment(event: TriggerEventType['CommentCreate']): string | nul
 Devvit.addTrigger({
   event: 'CommentCreate',
   onEvent: async (event, context) => {
+    // i have to do this because the devvit api restricts the number of characters in a setting to 250
+    // and my bearer token is quite long. therefore i have to concatenate the three parts of the key.
+    // this is messy but it works within the current limits of the devvit api.
     const hardcoverApiKey =
       (((await context.settings.get('hardcover-api-key-1')) as string) || '') +
       (((await context.settings.get('hardcover-api-key-2')) as string) || '') +
