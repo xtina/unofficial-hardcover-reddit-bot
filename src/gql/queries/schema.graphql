@@ -1,0 +1,91 @@
+type SearchHit {
+  document: books
+}
+
+extend type books {
+  genres: [String!]
+}
+
+extend type SearchOutput {
+  facet_counts: [String!]!
+  found: Int!
+  hits: [SearchHit!]!
+}
+
+query FuzzySearchBookByTitle($title: String!) {
+  search(query: $title, query_type: "book", per_page: 10, sort: "users_count:desc") {
+    results
+  }
+}
+
+query GetBookByID($id: Int!) {
+  books_by_pk(id: $id) {
+    id
+    title
+    slug
+    description
+    pages
+    release_year
+    cached_tags
+    contributions {
+      author {
+        name
+      }
+    }
+    image {
+      url
+    }
+  }
+}
+
+query SearchBookByTitle($title: String!) {
+  books(where: { title: { _eq: $title } }, limit: 10) {
+    id
+    title
+    description
+    pages
+    release_year
+    slug
+    cached_tags
+    contributions {
+      author {
+        name
+      }
+    }
+    image {
+      url
+    }
+  }
+}
+
+query SearchBookByTitleAndAuthor($title: String!, $author: String!) {
+  books(
+    where: {
+      _and: { title: { _eq: $title }, contributions: { author: { name: { _eq: $author } } } }
+    }
+    limit: 10
+  ) {
+    id
+    title
+    description
+    pages
+    release_year
+    slug
+    cached_tags
+    contributions {
+      author {
+        name
+      }
+    }
+    image {
+      url
+    }
+  }
+}
+
+query SearchAuthorByName($name: String!) {
+  authors(where: { name: { _eq: $name } }, limit: 10) {
+    id
+    name
+  }
+}

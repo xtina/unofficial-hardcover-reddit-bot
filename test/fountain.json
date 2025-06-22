@@ -1,0 +1,281 @@
+{
+  "search": {
+    "results": {
+      "facet_counts": [],
+      "found": 2,
+      "hits": [
+        {
+          "document": {
+            "activities_count": 0,
+            "alternative_titles": [
+              "Regarding the Fountain: A Tale, in Letters, of Liars and Leaks"
+            ],
+            "author_names": ["Kate Klise", "M. Sarah Klise"],
+            "compilation": false,
+            "content_warnings": [],
+            "contribution_types": ["Author", "Illustrator"],
+            "contributions": [
+              {
+                "author": {
+                  "id": 75219,
+                  "image": {
+                    "color": "#ecdd33",
+                    "color_name": "Gold",
+                    "height": 499,
+                    "id": 106014,
+                    "url": "https://assets.hardcover.app/books/75219/10244774-L.jpg",
+                    "width": 332
+                  },
+                  "name": "Kate Klise",
+                  "slug": "kate-klise"
+                },
+                "contribution": null
+              },
+              {
+                "author": {
+                  "id": 266715,
+                  "image": {
+                    "color": "#233142",
+                    "color_name": "Purple",
+                    "height": 500,
+                    "id": 292976,
+                    "url": "https://assets.hardcover.app/books/266715/10561045-L.jpg",
+                    "width": 309
+                  },
+                  "name": "M. Sarah Klise",
+                  "slug": "m-sarah-klise"
+                },
+                "contribution": "Illustrator"
+              }
+            ],
+            "cover_color": "Beige",
+            "featured_series": {
+              "collection": null,
+              "details": "1",
+              "featured": true,
+              "id": 102191,
+              "position": 1,
+              "series": {
+                "books_count": 4,
+                "id": 43062,
+                "name": "Regarding the...",
+                "primary_books_count": 4,
+                "slug": "regarding-the"
+              },
+              "unreleased": false
+            },
+            "featured_series_position": 1,
+            "genres": [],
+            "has_audiobook": false,
+            "has_ebook": false,
+            "id": "742961",
+            "image": {
+              "color": "#dfdfc4",
+              "color_name": "Beige",
+              "height": 145,
+              "id": 923358,
+              "url": "https://assets.hardcover.app/external_data/59876874/11fd4e91ba695c6927461f5bd60bfd72d5606d58.jpeg",
+              "width": 98
+            },
+            "isbns": ["0380793474", "9780380793471"],
+            "lists_count": 11,
+            "moods": [],
+            "prompts_count": 0,
+            "rating": 4.5,
+            "ratings_count": 6,
+            "release_date": "1998-01-01",
+            "release_year": 1998,
+            "reviews_count": 1,
+            "series_names": ["Regarding the..."],
+            "slug": "regarding-the-fountain-a-tale-in-letters-of-liars-and-leaks",
+            "subtitle": "A Tale, in Letters, of Liars and Leaks",
+            "tags": [],
+            "title": "Regarding the Fountain: A Tale, in Letters, of Liars and Leaks",
+            "users_count": 10,
+            "users_read_count": 9
+          },
+          "highlight": {
+            "alternative_titles": [
+              {
+                "matched_tokens": ["Regarding", "the", "Fountain"],
+                "snippet": "<mark>Regarding</mark> <mark>the</mark> <mark>Fountain</mark>: A Tale, in Letters, of Liars and Leaks"
+              }
+            ],
+            "series_names": [
+              {
+                "matched_tokens": ["Regarding", "the"],
+                "snippet": "<mark>Regarding</mark> <mark>the</mark>..."
+              }
+            ],
+            "title": {
+              "matched_tokens": ["Regarding", "the", "Fountain"],
+              "snippet": "<mark>Regarding</mark> <mark>the</mark> <mark>Fountain</mark>: A Tale, in Letters, of Liars and Leaks"
+            }
+          },
+          "highlights": [
+            {
+              "field": "title",
+              "matched_tokens": ["Regarding", "the", "Fountain"],
+              "snippet": "<mark>Regarding</mark> <mark>the</mark> <mark>Fountain</mark>: A Tale, in Letters, of Liars and Leaks"
+            },
+            {
+              "field": "alternative_titles",
+              "indices": [0],
+              "matched_tokens": [["Regarding", "the", "Fountain"]],
+              "snippets": [
+                "<mark>Regarding</mark> <mark>the</mark> <mark>Fountain</mark>: A Tale, in Letters, of Liars and Leaks"
+              ]
+            },
+            {
+              "field": "series_names",
+              "indices": [0],
+              "matched_tokens": [["Regarding", "the"]],
+              "snippets": ["<mark>Regarding</mark> <mark>the</mark>..."]
+            }
+          ],
+          "text_match": 1736172819517014000,
+          "text_match_info": {
+            "best_field_score": "3315704397824",
+            "best_field_weight": 5,
+            "fields_matched": 3,
+            "score": "1736172819517014059",
+            "tokens_matched": 3
+          }
+        },
+        {
+          "document": {
+            "activities_count": 0,
+            "alternative_titles": [
+              "Regarding the Fountain: A Tale, in Letters, of Liars and Leaks"
+            ],
+            "author_names": ["Kate Klise"],
+            "compilation": false,
+            "content_warnings": [],
+            "contribution_types": ["Author"],
+            "contributions": [
+              {
+                "author": {
+                  "id": 75219,
+                  "image": {
+                    "color": "#ecdd33",
+                    "color_name": "Gold",
+                    "height": 499,
+                    "id": 106014,
+                    "url": "https://assets.hardcover.app/books/75219/10244774-L.jpg",
+                    "width": 332
+                  },
+                  "name": "Kate Klise",
+                  "slug": "kate-klise"
+                },
+                "contribution": null
+              }
+            ],
+            "cover_color": "Beige",
+            "description": "When the principal asks a fifth-grader to write a letter regarding the purchase of a new drinking fountain for their school, he finds that all sorts of chaos results.",
+            "featured_series": {
+              "collection": null,
+              "details": "1",
+              "featured": true,
+              "id": 492760,
+              "position": 1,
+              "series": {
+                "books_count": 4,
+                "id": 43062,
+                "name": "Regarding the...",
+                "primary_books_count": 4,
+                "slug": "regarding-the"
+              },
+              "unreleased": false
+            },
+            "featured_series_position": 1,
+            "genres": [],
+            "has_audiobook": false,
+            "has_ebook": false,
+            "id": "28252",
+            "image": {
+              "color": "#dddcda",
+              "color_name": "Beige",
+              "height": 475,
+              "id": 2370775,
+              "url": "https://assets.hardcover.app/external_data/34544998/2e0dcb74a21ce2f6754f42662390d42f2303715a.jpeg",
+              "width": 315
+            },
+            "isbns": ["0380975386", "9780380975389", "0613178491", "9780613178495"],
+            "lists_count": 0,
+            "moods": [],
+            "pages": 135,
+            "prompts_count": 0,
+            "rating": 0,
+            "ratings_count": 0,
+            "release_date": "1998-01-01",
+            "release_year": 1998,
+            "reviews_count": 0,
+            "series_names": ["Regarding the..."],
+            "slug": "regarding-the-fountain",
+            "subtitle": "A Tale, in Letters, of Liars and Leaks",
+            "tags": [],
+            "title": "Regarding the Fountain: A Tale, in Letters, of Liars and Leaks",
+            "users_count": 0,
+            "users_read_count": 0
+          },
+          "highlight": {
+            "alternative_titles": [
+              {
+                "matched_tokens": ["Regarding", "the", "Fountain"],
+                "snippet": "<mark>Regarding</mark> <mark>the</mark> <mark>Fountain</mark>: A Tale, in Letters, of Liars and Leaks"
+              }
+            ],
+            "series_names": [
+              {
+                "matched_tokens": ["Regarding", "the"],
+                "snippet": "<mark>Regarding</mark> <mark>the</mark>..."
+              }
+            ],
+            "title": {
+              "matched_tokens": ["Regarding", "the", "Fountain"],
+              "snippet": "<mark>Regarding</mark> <mark>the</mark> <mark>Fountain</mark>: A Tale, in Letters, of Liars and Leaks"
+            }
+          },
+          "highlights": [
+            {
+              "field": "title",
+              "matched_tokens": ["Regarding", "the", "Fountain"],
+              "snippet": "<mark>Regarding</mark> <mark>the</mark> <mark>Fountain</mark>: A Tale, in Letters, of Liars and Leaks"
+            },
+            {
+              "field": "alternative_titles",
+              "indices": [0],
+              "matched_tokens": [["Regarding", "the", "Fountain"]],
+              "snippets": [
+                "<mark>Regarding</mark> <mark>the</mark> <mark>Fountain</mark>: A Tale, in Letters, of Liars and Leaks"
+              ]
+            },
+            {
+              "field": "series_names",
+              "indices": [0],
+              "matched_tokens": [["Regarding", "the"]],
+              "snippets": ["<mark>Regarding</mark> <mark>the</mark>..."]
+            }
+          ],
+          "text_match": 1736172819517014000,
+          "text_match_info": {
+            "best_field_score": "3315704397824",
+            "best_field_weight": 5,
+            "fields_matched": 3,
+            "score": "1736172819517014059",
+            "tokens_matched": 3
+          }
+        }
+      ],
+      "out_of": 1813854,
+      "page": 1,
+      "request_params": {
+        "collection_name": "Book_production_1738093885",
+        "per_page": 2,
+        "q": "Regarding the Fountain"
+      },
+      "search_cutoff": false,
+      "search_time_ms": 23
+    }
+  }
+}
