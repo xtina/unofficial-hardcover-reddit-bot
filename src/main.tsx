@@ -2,7 +2,7 @@
 import { Devvit, TriggerEventType } from '@devvit/public-api';
 import * as dotenv from 'dotenv';
 import { GraphQLClient } from 'graphql-request';
-import { processUserComment } from './CommentGenerator.js';
+import { CommentGenerator } from './CommentGenerator.js';
 
 dotenv.config();
 
@@ -14,38 +14,41 @@ Devvit.configure({
   },
 });
 
-Devvit.addSettings([{
-  name: 'hardcover-api-key-1',
-  label: 'Hardcover API Key part 1',
-  type: 'string',
-  isSecret: true,
-  scope: 'app',
-},{
-  name: 'hardcover-api-key-2',
-  label: 'Hardcover API Key part 2',
-  type: 'string',
-  isSecret: true,
-  scope: 'app',
-},
-{
-  name: 'hardcover-api-key-3',
-  label: 'Hardcover API Key part 3',
-  type: 'string',
-  isSecret: true,
-  scope: 'app',
-},
-{
-  name: 'hardcover-api-url',
-  label: 'Hardcover API URL',
-  type: 'string',
-  scope: 'app',
-}]);
+Devvit.addSettings([
+  {
+    name: 'hardcover-api-key-1',
+    label: 'Hardcover API Key part 1',
+    type: 'string',
+    isSecret: true,
+    scope: 'app',
+  },
+  {
+    name: 'hardcover-api-key-2',
+    label: 'Hardcover API Key part 2',
+    type: 'string',
+    isSecret: true,
+    scope: 'app',
+  },
+  {
+    name: 'hardcover-api-key-3',
+    label: 'Hardcover API Key part 3',
+    type: 'string',
+    isSecret: true,
+    scope: 'app',
+  },
+  {
+    name: 'hardcover-api-url',
+    label: 'Hardcover API URL',
+    type: 'string',
+    scope: 'app',
+  },
+]);
 
 dotenv.config();
 
-function validateComment(event: TriggerEventType['CommentCreate']): string | null {
+function validateComment(event: TriggerEventType['CommentCreate']): string | undefined {
   if (!event.comment?.body) {
-    return null;
+    return undefined;
   }
   return event.comment.body;
 }
@@ -77,12 +80,8 @@ Devvit.addTrigger({
       return;
     }
 
-    const commentResponse = await processUserComment(
-      commentBody,
-      hardcoverApiClient,
-      event?.subreddit?.name,
-      context.redis
-    );
+    const generator = new CommentGenerator(hardcoverApiClient, context.redis);
+    const commentResponse = await generator.processUserComment(commentBody, event?.subreddit?.name);
     if (commentResponse) {
       await context.reddit.submitComment({
         id: event.comment.id,

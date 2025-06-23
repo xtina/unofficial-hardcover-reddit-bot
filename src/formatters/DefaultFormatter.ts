@@ -1,6 +1,4 @@
 import { ExtendedBook } from '../types';
-import { BookFormatter } from './BookFormatter';
-import type { Contributions } from '../gql/generated/graphql';
 import { LiteFormatter } from './LiteFormatter';
 
 export class DefaultFormatter extends LiteFormatter {
@@ -14,7 +12,7 @@ export class DefaultFormatter extends LiteFormatter {
     this.bookSuggestions = bookSuggestions ?? 1;
 
     // Destructure commonly used properties into private fields
-    const { pages, genres, contributions, description } = this.bookInfo;
+    const { pages, genres, description } = this.bookInfo;
     this.pages = pages;
     this.genres = genres ?? [];
     this.description = description;
