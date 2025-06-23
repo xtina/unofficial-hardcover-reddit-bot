@@ -18,7 +18,7 @@ export class CommentGenerator {
     this.bookCache = new BookCache(redisClient);
   }
 
-  public async processUserComment(
+  public async processText(
     comment: string,
     subredditName: string | undefined
   ): Promise<string | undefined> {
@@ -72,10 +72,7 @@ export class CommentGenerator {
     return { title, author };
   }
 
-  private async getBookData(
-    title: string,
-    author: string
-  ): Promise<ExtendedBook | undefined> {
+  private async getBookData(title: string, author: string): Promise<ExtendedBook | undefined> {
     const query = `${title} ${author}`.trim();
     // is it in the cache?
     const cachedBook = await this.bookCache.getBook(query);

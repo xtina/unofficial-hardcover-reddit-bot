@@ -46,15 +46,19 @@ Devvit.addSettings([
 
 dotenv.config();
 
-function validateComment(event: TriggerEventType['CommentCreate']): string | undefined {
-  if (!event.comment?.body) {
-    return undefined;
+function getText(
+  event: TriggerEventType['CommentCreate'] | TriggerEventType['PostCreate']
+): string | undefined {
+  if (event.type === 'CommentCreate') {
+    return event?.comment?.body;
+  } else if (event.type === 'PostCreate') {
+    return event.post?.selftext;
   }
-  return event.comment.body;
+  return undefined;
 }
 
 Devvit.addTrigger({
-  event: 'CommentCreate',
+  events: ['CommentCreate', 'PostCreate'],
   onEvent: async (event, context) => {
     // i have to do this because the devvit api restricts the number of characters in a setting to 250
     // and my bearer token is quite long. therefore i have to concatenate the three parts of the key.
@@ -73,23 +77,24 @@ Devvit.addTrigger({
       console.error('No API key or URL found');
       return;
     }
-    
+
     const hardcoverApiClient = new GraphQLClient(hardcoverApiUrl, {
       headers: {
         Authorization: `Bearer ${maybeApiKey}`,
       },
     });
 
-    const commentBody = validateComment(event);
-    if (!commentBody || !event.comment?.id) {
+    const text = getText(event);
+    const id = event.type === 'CommentCreate' ? event?.comment?.id : event.post?.id;
+    if (!text || !id) {
       return;
     }
 
     const generator = new CommentGenerator(hardcoverApiClient, context.redis);
-    const commentResponse = await generator.processUserComment(commentBody, event?.subreddit?.name);
+    const commentResponse = await generator.processText(text, event?.subreddit?.name);
     if (commentResponse) {
       await context.reddit.submitComment({
-        id: event.comment.id,
+        id,
         text: commentResponse,
       });
     }
