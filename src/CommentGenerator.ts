@@ -7,14 +7,15 @@ import {
   FuzzySearchBookByTitleQuery,
 } from './gql/generated/graphql';
 import { ExtendedBook } from './types';
+import { BookCache } from './BookCache';
 
 export class CommentGenerator {
   private hardcoverApiClient: GraphQLClient;
-  private redisClient: RedisClient;
+  private bookCache: BookCache;
 
   constructor(hardcoverApiClient: GraphQLClient, redisClient: RedisClient) {
     this.hardcoverApiClient = hardcoverApiClient;
-    this.redisClient = redisClient;
+    this.bookCache = new BookCache(redisClient);
   }
 
   public async processUserComment(
@@ -40,12 +41,12 @@ export class CommentGenerator {
       if (book) {
         let bookSuggested = 1;
         try {
-          bookSuggested = await this.redisClient.incrBy(`book_suggested:${book.id}`, 1);
-          totalBooksSuggested = await this.redisClient.incrBy(`total_books_suggested`, 1);
+          bookSuggested = await this.bookCache.incrBookSuggested(book.id);
+          totalBooksSuggested = await this.bookCache.incrTotalBooksSuggested();
         } catch (error) {
           console.error('Failed to update book suggestion counts:', error);
-          bookSuggested = (await this.redisClient.get(`book_suggested:${book.id}`)) as unknown as number;
-          totalBooksSuggested = (await this.redisClient.get(`total_books_suggested`)) as unknown as number;
+          bookSuggested = await this.bookCache.getTimesBookSuggested(book.id);
+          totalBooksSuggested = await this.bookCache.getTotalBooksSuggested();
         }
 
         commentContent = commentContent?.concat(
@@ -77,14 +78,16 @@ export class CommentGenerator {
   ): Promise<ExtendedBook | undefined> {
     const query = `${title} ${author}`.trim();
     // is it in the cache?
-    const cachedBook = await this.redisClient.get(`book:${query}`);
+    const cachedBook = await this.bookCache.getBook(query);
     if (cachedBook) {
-      return JSON.parse(cachedBook as string) as ExtendedBook;
+      return cachedBook;
     }
     const response = await this.hardcoverApiClient.request<FuzzySearchBookByTitleQuery>(
       FuzzySearchBookByTitleDocument,
       { title: query }
     );
+    // don't wait for this to complete
+    this.bookCache.cacheBook(query, response.search?.results?.hits[0]?.document as ExtendedBook);
     return response.search?.results?.hits[0]?.document as ExtendedBook;
   }
 
@@ -111,6 +114,6 @@ export class CommentGenerator {
 
   private generateFooter(totalSuggestions: number): string {
     const s = totalSuggestions != 1 ? 's' : '';
-    return `^(${totalSuggestions} book${s} suggested | )[^(Source)](https://github.com/rodohanna/reddit-goodreads-bot)`;
+    return `^(${totalSuggestions} book${s} suggested | )[^(Source)](https://github.com/xtina/unofficial-hardcover-reddit-bot)`;
   }
 }

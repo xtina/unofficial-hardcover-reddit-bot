@@ -25,8 +25,16 @@ If someone makes a comment like:
 
 The bot will add a comment with all of the information listed above AND the Hardcover description.
 
+## Links
+[Source](https://github.com/xtina/unofficial-hardcover-reddit-bot/tree/main)
+
+[Privacy Policy](https://github.com/xtina/unofficial-hardcover-reddit-bot/blob/main/PRIVACY.md)
+
+[Terms and Conditions](https://github.com/xtina/unofficial-hardcover-reddit-bot/blob/main/TERMS.md)
+
 ### Why hardcover.app?
 
 They have a public API and nice [docs](https://docs.hardcover.app/api/getting-started/)
 
 Storygraph does not have a public API and Goodreads has shut down its public API. 
+

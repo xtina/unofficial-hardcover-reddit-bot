@@ -69,6 +69,11 @@ Devvit.addTrigger({
       process.env.HARDCOVER_API_URL ||
       '';
 
+    if (!maybeApiKey || !hardcoverApiUrl) {
+      console.error('No API key or URL found');
+      return;
+    }
+    
     const hardcoverApiClient = new GraphQLClient(hardcoverApiUrl, {
       headers: {
         Authorization: `Bearer ${maybeApiKey}`,
