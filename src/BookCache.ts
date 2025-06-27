@@ -29,7 +29,7 @@ export class BookCache {
    * @returns The number of times the book has been suggested
    */
   async getTimesBookSuggested(bookId: number): Promise<number> {
-    return (await this.redisClient.get(`book_suggested:${bookId}`)) as unknown as number;
+    return (await this.redisClient.get(`book_suggested:${bookId}`)) as unknown as number ?? 1;
   }
 
   async incrTotalBooksSuggested(): Promise<number> {
@@ -37,6 +37,6 @@ export class BookCache {
   }
 
   async getTotalBooksSuggested(): Promise<number> {
-    return (await this.redisClient.get(`total_books_suggested`)) as unknown as number;
+    return (await this.redisClient.get(`total_books_suggested`)) as unknown as number ?? 1;
   }
 }

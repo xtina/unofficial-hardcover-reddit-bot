@@ -27,7 +27,7 @@ export class CommentGenerator {
       return undefined;
     }
     let commentContent = '';
-    let totalBooksSuggested = 1;
+    let totalBooksSuggested;
 
     for (const match of matches) {
       const [, longFormat, shortFormat] = match.match(/h\{\{([^}]+)\}\}|h\{([^}]+)\}/) || [];
@@ -39,7 +39,7 @@ export class CommentGenerator {
 
       const book = await this.getBookData(title, author);
       if (book) {
-        let bookSuggested = 1;
+        let bookSuggested: number;
         try {
           bookSuggested = await this.bookCache.incrBookSuggested(book.id);
           totalBooksSuggested = await this.bookCache.incrTotalBooksSuggested();
@@ -56,6 +56,7 @@ export class CommentGenerator {
     }
 
     if (commentContent) {
+      totalBooksSuggested = totalBooksSuggested ?? 1;
       commentContent += '***' + BookFormatter.prototype.getSectionSeparator();
       commentContent += this.generateFooter(totalBooksSuggested);
     }

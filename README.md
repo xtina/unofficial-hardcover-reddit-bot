@@ -2,6 +2,8 @@
 
 Inspired by [reddit-goodreads-bot](https://github.com/rodohanna/reddit-goodreads-bot) and adapted to use the [Hardcover](https://hardcover.app/) GQL API. This is built on top of Reddit's [Devvit](https://developers.reddit.com/docs/) platform. PRs and issues are welcome!
 
+[Add this bot to your subreddit!](https://developers.reddit.com/apps/hardcoverbot)
+
 ## I don't work for Hardcover
 
 I made this because I like the hardcover app a lot; but hardcover devs, if you're reading this, send me a coffee!
@@ -35,6 +37,6 @@ The bot will add a comment with all of the information listed above AND the Hard
 
 ### Why hardcover.app?
 
-They have a public API and nice [docs](https://docs.hardcover.app/api/getting-started/)
+They have a public API and nice [docs](https://docs.hardcover.app/api/getting-started/).
 
 Storygraph does not have a public API and Goodreads has shut down its public API.
