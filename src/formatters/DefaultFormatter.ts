@@ -14,7 +14,8 @@ export class DefaultFormatter extends LiteFormatter {
     // Destructure commonly used properties into private fields
     const { pages, genres, description } = this.bookInfo;
     this.pages = pages;
-    this.genres = genres ?? [];
+    // escape () and [] in genres
+    this.genres = genres?.slice(0, 5)?.map((genre) => genre.replace(/([()[\]])/g, '\\$1')) ?? [];
     this.description = description;
   }
 
@@ -26,7 +27,12 @@ export class DefaultFormatter extends LiteFormatter {
     if (!this.description) {
       return '';
     }
-    const cleanDescription = this.description.replace(/<.*?>/g, '').replace(/<br \/>/g, '\n');
+    // Remove HTML tags, replace <br /> with newlines, and escape () and []
+    const cleanDescription = this.description
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<.*?>/g, '')
+      .replace(/([()[\]])/g, '\\$1');
+
     return cleanDescription
       .split('\n')
       .map((chunk) => `>${chunk}`)

@@ -1,0 +1,579 @@
+{
+    "search": {
+        "results": {
+            "facet_counts": [],
+            "found": 99,
+            "hits": [
+                {
+                    "document": {
+                        "activities_count": 541,
+                        "alternative_titles": [
+                            "Hyperion",
+                            "The Fall of Hyperion",
+                            "Hypérion",
+                            "Hypérion 1"
+                        ],
+                        "author_names": [
+                            "Dan Simmons"
+                        ],
+                        "compilation": false,
+                        "content_warnings": [
+                            "Gore",
+                            "Sexual content",
+                            "body horror",
+                            "Animal cruelty",
+                            "Cursing",
+                            "Chronic illness",
+                            "Alcoholism",
+                            "death",
+                            "Drug abuse",
+                            "Addiction"
+                        ],
+                        "contribution_types": [
+                            "Author"
+                        ],
+                        "contributions": [
+                            {
+                                "author": {
+                                    "id": 166124,
+                                    "image": {
+                                        "color": "#343932",
+                                        "color_name": "Brown",
+                                        "height": 361,
+                                        "id": 34051,
+                                        "url": "https://assets.hardcover.app/authors/166124/6882581-L.jpg",
+                                        "width": 307
+                                    },
+                                    "name": "Dan Simmons",
+                                    "slug": "dan-simmons"
+                                },
+                                "contribution": null
+                            }
+                        ],
+                        "cover_color": "Brown",
+                        "description": "In the 29th century, the Hegemony of Man comprises hundreds of planets connected by farcaster portals. The Hegemony maintains an uneasy alliance with the TechnoCore, a civilisation of AIs. Modified humans known as Ousters live in space stations between stars and are engaged in conflict with the Hegemony.\r\n\r\nNumerous \"Outback\" planets have no farcasters and cannot be accessed without incurring significant time dilation. One of these planets is Hyperion, home to structures known as the Time Tombs, which are moving backwards in time and guarded by a legendary creature known as the Shrike. On the eve of an Ouster invasion of Hyperion, a final pilgrimage to the Time Tombs has been organized. The pilgrims decide that they will each tell their tale of how they were chosen for the pilgrimage.",
+                        "featured_series": {
+                            "collection": null,
+                            "details": "1",
+                            "featured": true,
+                            "id": 3330,
+                            "position": 1,
+                            "series": {
+                                "books_count": 13,
+                                "id": 1049,
+                                "name": "Hyperion Cantos",
+                                "primary_books_count": 4,
+                                "slug": "hyperion-cantos"
+                            },
+                            "unreleased": false
+                        },
+                        "featured_series_position": 1,
+                        "genres": [
+                            "Science fiction",
+                            "Fiction",
+                            "Space",
+                            "War",
+                            "Aliens",
+                            "Classics",
+                            "Hyperion (Imaginary place)",
+                            "Fantasy",
+                            "Adventure"
+                        ],
+                        "has_audiobook": true,
+                        "has_ebook": true,
+                        "id": "427460",
+                        "image": {
+                            "color": "#9d2914",
+                            "color_name": "Brown",
+                            "height": 500,
+                            "id": 4606138,
+                            "url": "https://assets.hardcover.app/edition/30428122/3c2f0e295e374546dcee4d94bd25197589d8484a.jpeg",
+                            "width": 326
+                        },
+                        "isbns": [
+                            "8834718151",
+                            "9788834718155",
+                            "8804376147",
+                            "9788804376149",
+                            "9788498723069",
+                            "1423381408",
+                            "9781423381402",
+                            "9024511747",
+                            "9789024511747",
+                            "9788056639122",
+                            "9515784484",
+                            "9789515784483",
+                            "9789635981298",
+                            "6069208765",
+                            "9786069208762",
+                            "0747202435",
+                            "9780747202431",
+                            "0787123471",
+                            "9780787123475",
+                            "8834727118",
+                            "9788834727119",
+                            "8440638744",
+                            "9788440638748",
+                            "8466617353",
+                            "9788466617352",
+                            "0575076372",
+                            "9780575076372",
+                            "0553283685",
+                            "9780553283686",
+                            "0575099437",
+                            "9780575099432",
+                            "0385263481",
+                            "9780385263481",
+                            "0307781887",
+                            "9780307781888",
+                            "8025723275",
+                            "9788025723272",
+                            "1596064692",
+                            "9781596064690",
+                            "0399178619",
+                            "9780399178610",
+                            "0575099968",
+                            "9780575099968",
+                            "8374800747",
+                            "9788374800747",
+                            "9024565197",
+                            "9789024565191",
+                            "0747234825",
+                            "9780747234821",
+                            "8447307417",
+                            "9788447307418",
+                            "9024517095",
+                            "9789024517091",
+                            "8576576015",
+                            "9788576576013",
+                            "2221263162",
+                            "9782221263167",
+                            "2221127544",
+                            "9782221127544",
+                            "2266252585",
+                            "9782266252584",
+                            "2266111396",
+                            "9782266111393",
+                            "2266173278",
+                            "9782266173278",
+                            "9780575116771",
+                            "8466658033",
+                            "9788466658034",
+                            "2221069501",
+                            "9782221069509",
+                            "8834734459",
+                            "9788834734452",
+                            "9781455802593"
+                        ],
+                        "lists_count": 712,
+                        "moods": [
+                            "mysterious",
+                            "Adventurous",
+                            "dark",
+                            "challenging",
+                            "reflective",
+                            "emotional",
+                            "tense"
+                        ],
+                        "pages": 492,
+                        "prompts_count": 8,
+                        "rating": 4.261565836298932,
+                        "ratings_count": 843,
+                        "release_date": "1989-01-01",
+                        "release_year": 1989,
+                        "reviews_count": 84,
+                        "series_names": [
+                            "Hyperion Cantos"
+                        ],
+                        "slug": "hyperion",
+                        "tags": [
+                            "Diverse Characters",
+                            "Unloveable Characters",
+                            "Character driven",
+                            "Loveable Characters",
+                            "Strong Character Development",
+                            "A mix driven",
+                            "Weak Character Development"
+                        ],
+                        "title": "Hyperion",
+                        "users_count": 2300,
+                        "users_read_count": 1042
+                    },
+                    "highlight": {
+                        "alternative_titles": [
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "<mark>Hyperion</mark>"
+                            },
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "The Fall of <mark>Hyperion</mark>"
+                            },
+                            {
+                                "matched_tokens": [
+                                    "Hypérion"
+                                ],
+                                "snippet": "<mark>Hypérion</mark>"
+                            },
+                            {
+                                "matched_tokens": [
+                                    "Hypérion"
+                                ],
+                                "snippet": "<mark>Hypérion</mark> 1"
+                            }
+                        ],
+                        "series_names": [
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "<mark>Hyperion</mark> Cantos"
+                            }
+                        ],
+                        "title": {
+                            "matched_tokens": [
+                                "Hyperion"
+                            ],
+                            "snippet": "<mark>Hyperion</mark>"
+                        }
+                    },
+                    "highlights": [
+                        {
+                            "field": "title",
+                            "matched_tokens": [
+                                "Hyperion"
+                            ],
+                            "snippet": "<mark>Hyperion</mark>"
+                        },
+                        {
+                            "field": "alternative_titles",
+                            "indices": [
+                                0,
+                                2,
+                                1,
+                                3
+                            ],
+                            "matched_tokens": [
+                                [
+                                    "Hyperion"
+                                ],
+                                [
+                                    "Hypérion"
+                                ],
+                                [
+                                    "Hyperion"
+                                ],
+                                [
+                                    "Hypérion"
+                                ]
+                            ],
+                            "snippets": [
+                                "<mark>Hyperion</mark>",
+                                "<mark>Hypérion</mark>",
+                                "The Fall of <mark>Hyperion</mark>",
+                                "<mark>Hypérion</mark> 1"
+                            ]
+                        },
+                        {
+                            "field": "series_names",
+                            "indices": [
+                                0
+                            ],
+                            "matched_tokens": [
+                                [
+                                    "Hyperion"
+                                ]
+                            ],
+                            "snippets": [
+                                "<mark>Hyperion</mark> Cantos"
+                            ]
+                        }
+                    ],
+                    "text_match": 578730123365711900,
+                    "text_match_info": {
+                        "best_field_score": "1108091339008",
+                        "best_field_weight": 5,
+                        "fields_matched": 3,
+                        "score": "578730123365711915",
+                        "tokens_matched": 1
+                    }
+                },
+                {
+                    "document": {
+                        "activities_count": 162,
+                        "alternative_titles": [
+                            "Upadek Hyperiona",
+                            "The Fall of Hyperion",
+                            "La caduta di Hyperion",
+                            "La caída de Hyperion",
+                            "The fall of Hyperion",
+                            "La Caduta di Hyperion"
+                        ],
+                        "author_names": [
+                            "Dan Simmons"
+                        ],
+                        "compilation": false,
+                        "content_warnings": [],
+                        "contribution_types": [
+                            "Author"
+                        ],
+                        "contributions": [
+                            {
+                                "author": {
+                                    "id": 166124,
+                                    "image": {
+                                        "color": "#343932",
+                                        "color_name": "Brown",
+                                        "height": 361,
+                                        "id": 34051,
+                                        "url": "https://assets.hardcover.app/authors/166124/6882581-L.jpg",
+                                        "width": 307
+                                    },
+                                    "name": "Dan Simmons",
+                                    "slug": "dan-simmons"
+                                },
+                                "contribution": null
+                            }
+                        ],
+                        "cover_color": "Brown",
+                        "description": "The sequel to Hyperion, The Fall of Hyperion starts right after Hyperion leaves off. As the Shrike Pilgrims complete their journey to the Time Tombs to confront the legendary Shrike, all the while powerful entities seek to influence their journey. ",
+                        "featured_series": {
+                            "collection": null,
+                            "details": "2",
+                            "featured": true,
+                            "id": 432175,
+                            "position": 2,
+                            "series": {
+                                "books_count": 13,
+                                "id": 1049,
+                                "name": "Hyperion Cantos",
+                                "primary_books_count": 4,
+                                "slug": "hyperion-cantos"
+                            },
+                            "unreleased": false
+                        },
+                        "featured_series_position": 2,
+                        "genres": [
+                            "Fiction",
+                            "Science fiction",
+                            "Hyperion (Imaginary place)",
+                            "Adventure",
+                            "Space",
+                            "War",
+                            "Dystopian",
+                            "Aliens",
+                            "Space Opera",
+                            "Classics"
+                        ],
+                        "has_audiobook": true,
+                        "has_ebook": true,
+                        "id": "369986",
+                        "image": {
+                            "color": "#801c0b",
+                            "color_name": "Brown",
+                            "height": 500,
+                            "id": 4353169,
+                            "url": "https://assets.hardcover.app/edition/30400661/c19e1bf0e97e55590a2c2199d139e1b5200b9493.jpeg",
+                            "width": 325
+                        },
+                        "isbns": [
+                            "9788374805841",
+                            "074720344X",
+                            "9780747203445",
+                            "0385249500",
+                            "9780385249508",
+                            "8834731891",
+                            "9788834731895",
+                            "0553288202",
+                            "9780553288209",
+                            "0575076380",
+                            "9780575076389",
+                            "8498723140",
+                            "9788498723144",
+                            "0575099488",
+                            "9780575099487",
+                            "0747279640",
+                            "9780747279648",
+                            "0747203448",
+                            "0385267479",
+                            "9780385267472",
+                            "8374800879",
+                            "9788374800877",
+                            "0747236046",
+                            "9780747236047",
+                            "9781603933728",
+                            "0307781895",
+                            "9780307781895",
+                            "0575099933",
+                            "9780575099937",
+                            "8834735404",
+                            "9788834735404"
+                        ],
+                        "lists_count": 265,
+                        "moods": [
+                            "Adventurous",
+                            "mysterious",
+                            "tense",
+                            "reflective",
+                            "challenging",
+                            "dark",
+                            "scary",
+                            "emotional"
+                        ],
+                        "pages": 595,
+                        "prompts_count": 2,
+                        "rating": 4.155434782608696,
+                        "ratings_count": 460,
+                        "release_date": "1990-02-01",
+                        "release_year": 1990,
+                        "reviews_count": 39,
+                        "series_names": [
+                            "Hyperion Cantos"
+                        ],
+                        "slug": "the-fall-of-hyperion",
+                        "tags": [
+                            "Loveable Characters",
+                            "A mix driven",
+                            "Strong Character Development"
+                        ],
+                        "title": "The Fall of Hyperion",
+                        "users_count": 754,
+                        "users_read_count": 551
+                    },
+                    "highlight": {
+                        "alternative_titles": [
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "Upadek <mark>Hyperion</mark>a"
+                            },
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "The Fall of <mark>Hyperion</mark>"
+                            },
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "La caduta di <mark>Hyperion</mark>"
+                            },
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "La caída de <mark>Hyperion</mark>"
+                            },
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "The fall of <mark>Hyperion</mark>"
+                            },
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "La Caduta di <mark>Hyperion</mark>"
+                            }
+                        ],
+                        "series_names": [
+                            {
+                                "matched_tokens": [
+                                    "Hyperion"
+                                ],
+                                "snippet": "<mark>Hyperion</mark> Cantos"
+                            }
+                        ],
+                        "title": {
+                            "matched_tokens": [
+                                "Hyperion"
+                            ],
+                            "snippet": "The Fall of <mark>Hyperion</mark>"
+                        }
+                    },
+                    "highlights": [
+                        {
+                            "field": "title",
+                            "matched_tokens": [
+                                "Hyperion"
+                            ],
+                            "snippet": "The Fall of <mark>Hyperion</mark>"
+                        },
+                        {
+                            "field": "series_names",
+                            "indices": [
+                                0
+                            ],
+                            "matched_tokens": [
+                                [
+                                    "Hyperion"
+                                ]
+                            ],
+                            "snippets": [
+                                "<mark>Hyperion</mark> Cantos"
+                            ]
+                        },
+                        {
+                            "field": "alternative_titles",
+                            "indices": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ],
+                            "matched_tokens": [
+                                [
+                                    "Hyperion"
+                                ],
+                                [
+                                    "Hyperion"
+                                ],
+                                [
+                                    "Hyperion"
+                                ],
+                                [
+                                    "Hyperion"
+                                ],
+                                [
+                                    "Hyperion"
+                                ]
+                            ],
+                            "snippets": [
+                                "Upadek <mark>Hyperion</mark>a",
+                                "The Fall of <mark>Hyperion</mark>",
+                                "La caduta di <mark>Hyperion</mark>",
+                                "La caída de <mark>Hyperion</mark>",
+                                "The fall of <mark>Hyperion</mark>"
+                            ]
+                        }
+                    ],
+                    "text_match": 578730123365187600,
+                    "text_match_info": {
+                        "best_field_score": "1108091338752",
+                        "best_field_weight": 5,
+                        "fields_matched": 3,
+                        "score": "578730123365187627",
+                        "tokens_matched": 1
+                    }
+                }
+            ],
+            "out_of": 1827650,
+            "page": 1,
+            "request_params": {
+                "collection_name": "Book_production_1738093885",
+                "per_page": 2,
+                "q": "hyperion"
+            },
+            "search_cutoff": false,
+            "search_time_ms": 1
+        }
+    }
+}

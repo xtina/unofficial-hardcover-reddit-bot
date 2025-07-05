@@ -27,6 +27,14 @@ If someone makes a comment like:
 
 The bot will add a comment with all of the information listed above AND the Hardcover description.
 
+If you want to specify the author, you would do it like:
+
+`Look at h{Recursion by Blake Crouch}`
+
+or
+
+`Look at h{{Recursion by Blake Crouch}}`
+
 ## Links
 
 [Source](https://github.com/xtina/unofficial-hardcover-reddit-bot/tree/main)
