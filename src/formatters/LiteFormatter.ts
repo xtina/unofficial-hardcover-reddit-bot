@@ -2,10 +2,10 @@ import { Books, Contributions } from '../gql/generated/graphql';
 import { BookFormatter } from './BookFormatter';
 
 export class LiteFormatter extends BookFormatter {
-  protected title: string | null | undefined;
-  protected slug: string | null | undefined;
-  protected releaseYear: number | string | null | undefined;
-  protected authors: Contributions[];
+  protected readonly title: string | null | undefined;
+  protected readonly slug: string | null | undefined;
+  protected readonly releaseYear: number | string | null | undefined;
+  protected readonly authors: readonly Contributions[];
 
   constructor(bookInfo: Books) {
     super(bookInfo);

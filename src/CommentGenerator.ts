@@ -9,9 +9,13 @@ import {
 import { ExtendedBook } from './types';
 import { BookCache } from './BookCache';
 
+const REDDIT_CHAR_LIMIT = 10000;
+const SAFETY_MARGIN = 500; // Reserve space for footer
+
 export class CommentGenerator {
   private hardcoverApiClient: GraphQLClient;
   private bookCache: BookCache;
+  private readonly MAX_BOOKS_PER_COMMENT = 8;
 
   constructor(hardcoverApiClient: GraphQLClient, redisClient: RedisClient) {
     this.hardcoverApiClient = hardcoverApiClient;
@@ -26,8 +30,15 @@ export class CommentGenerator {
     if (!matches) {
       return undefined;
     }
+
+    // If too many book requests, ask user to split
+    if (matches.length > this.MAX_BOOKS_PER_COMMENT) {
+      return `I found **${matches.length} book requests**, which is too many for a single comment! Please split your suggestions across multiple comments to avoid hitting Reddit's character limit. Try suggesting 4-5 books per comment for best results.`;
+    }
+
     let commentContent = '';
-    let totalBooksSuggested;
+    let totalBooksSuggested = 0;
+    let booksAdded = 0;
 
     for (const match of matches) {
       const [, longFormat, shortFormat] = match.match(/h\{\{([^}]+)\}\}|h\{([^}]+)\}/) || [];
@@ -35,8 +46,8 @@ export class CommentGenerator {
       if (!content) {
         continue;
       }
-      const { title, author } = this.extractTitleAndAuthor(content);
 
+      const { title, author } = this.extractTitleAndAuthor(content);
       const book = await this.getBookData(title, author);
       if (book) {
         let bookSuggested: number;
@@ -49,14 +60,27 @@ export class CommentGenerator {
           totalBooksSuggested = await this.bookCache.getTotalBooksSuggested();
         }
 
-        commentContent = commentContent?.concat(
-          this.generateResponse(book, bookSuggested, subredditName, !!longFormat)
+        const bookResponse = this.generateResponse(
+          book,
+          bookSuggested,
+          subredditName,
+          !!longFormat
         );
+
+        // Check if adding this book would exceed the limit
+        const potentialLength = commentContent.length + bookResponse.length + 50; // +50 for footer overhead
+        if (potentialLength > REDDIT_CHAR_LIMIT - SAFETY_MARGIN && booksAdded > 0) {
+          // Would exceed limit - ask user to split
+          return `I found **${booksAdded + (matches.length - matches.indexOf(match))} book requests**, which is too many for a single comment! Please split your suggestions across multiple comments to avoid hitting Reddit's character limit. Try suggesting 4-5 books per comment for best results.`;
+        }
+
+        commentContent += bookResponse;
+        booksAdded++;
       }
     }
 
+    // Add the final comment with separator and footer
     if (commentContent) {
-      totalBooksSuggested = totalBooksSuggested ?? 1;
       commentContent += '***' + BookFormatter.prototype.getSectionSeparator();
       commentContent += this.generateFooter(totalBooksSuggested);
     }
