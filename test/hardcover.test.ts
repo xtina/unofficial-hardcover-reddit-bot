@@ -138,7 +138,10 @@ I wrote down horror, sci fi, and fantasy. I'm not sure what exactly you're want 
 
     it('should ask user to split if too many book requests', async () => {
       mockClient.request.mockResolvedValue(gatsbyResponse);
-      const longTitles = Array(15).fill(null).map(() => 'h{{The Great Gatsby by F. Scott Fitzgerald}}').join('\n');
+      const longTitles = Array(15)
+        .fill(null)
+        .map(() => 'h{{The Great Gatsby by F. Scott Fitzgerald}}')
+        .join('\n');
       const result = await commentGenerator.processText(longTitles, 'books');
       expect(result).toBeDefined();
       expect(typeof result).toBe('string');
@@ -200,7 +203,8 @@ I wrote down horror, sci fi, and fantasy. I'm not sure what exactly you're want 
     });
 
     it('should handle comments with extra whitespace around tags', async () => {
-      const comment = 'h{{ The Great Gatsby by F. Scott Fitzgerald }} and h{ Another Title by Author }';
+      const comment =
+        'h{{ The Great Gatsby by F. Scott Fitzgerald }} and h{ Another Title by Author }';
       const result = await commentGenerator.processText(comment, 'books');
       expect(result).toBeDefined();
       expect(typeof result).toBe('string');

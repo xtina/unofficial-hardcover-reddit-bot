@@ -16,22 +16,8 @@ Devvit.configure({
 
 Devvit.addSettings([
   {
-    name: 'hardcover-api-key-1',
-    label: 'Hardcover API Key part 1',
-    type: 'string',
-    isSecret: true,
-    scope: 'app',
-  },
-  {
-    name: 'hardcover-api-key-2',
-    label: 'Hardcover API Key part 2',
-    type: 'string',
-    isSecret: true,
-    scope: 'app',
-  },
-  {
-    name: 'hardcover-api-key-3',
-    label: 'Hardcover API Key part 3',
+    name: 'hardcoverApiKey',
+    label: 'Hardcover API Key',
     type: 'string',
     isSecret: true,
     scope: 'app',
@@ -47,26 +33,22 @@ Devvit.addSettings([
 dotenv.config();
 
 function getText(
-  event: TriggerEventType['CommentCreate'] | TriggerEventType['PostCreate']
+  event: TriggerEventType['CommentSubmit'] | TriggerEventType['PostSubmit']
 ): string | undefined {
-  if (event.type === 'CommentCreate') {
+  if (event.type === 'CommentSubmit') {
     return event?.comment?.body;
-  } else if (event.type === 'PostCreate') {
+  } else if (event.type === 'PostSubmit') {
     return event.post?.selftext;
   }
   return undefined;
 }
 
 Devvit.addTrigger({
-  events: ['CommentCreate', 'PostCreate'],
+  events: ['CommentSubmit', 'PostSubmit'],
   onEvent: async (event, context) => {
-    // i have to do this because the devvit api restricts the number of characters in a setting to 250
-    // and my bearer token is quite long. therefore i have to concatenate the three parts of the key.
-    // this is messy but it works within the current limits of the devvit api.
-    const hardcoverApiKey =
-      (((await context.settings.get('hardcover-api-key-1')) as string) || '') +
-      (((await context.settings.get('hardcover-api-key-2')) as string) || '') +
-      (((await context.settings.get('hardcover-api-key-3')) as string) || '');
+    console.log('TRIGGER FIRED:', event.type);
+
+    const hardcoverApiKey = ((await context.settings.get('hardcoverApiKey')) as string) || '';
     const maybeApiKey = hardcoverApiKey || process.env.HARDCOVER_KEY;
     const hardcoverApiUrl =
       ((await context.settings.get('hardcover-api-url')) as string) ||
@@ -85,7 +67,8 @@ Devvit.addTrigger({
     });
 
     const text = getText(event);
-    const id = event.type === 'CommentCreate' ? event?.comment?.id : event.post?.id;
+    console.log(text);
+    const id = event.type === 'CommentSubmit' ? event?.comment?.id : event.post?.id;
     if (!text || !id) {
       return;
     }
