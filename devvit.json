@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "hardcoverbot",
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "triggers": {
+    "onCommentSubmit": "/internal/triggers/on-comment-submit",
+    "onPostSubmit": "/internal/triggers/on-post-submit"
+  },
+  "permissions": {
+    "reddit": true,
+    "redis": true,
+    "http": {
+      "domains": ["api.hardcover.app"]
+    }
+  },
+  "settings": {
+    "global": {
+      "hardcoverApiKey": {
+        "type": "string",
+        "label": "Hardcover API Key",
+        "isSecret": true
+      },
+      "hardcover-api-url": {
+        "type": "string",
+        "label": "Hardcover API URL",
+        "defaultValue": "https://api.hardcover.app/v1/graphql"
+      }
+    }
+  },
+  "scripts": {
+    "dev": "pnpm dev",
+    "build": "pnpm build"
+  }
+}

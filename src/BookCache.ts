@@ -1,4 +1,4 @@
-import { RedisClient } from '@devvit/public-api';
+import type { RedisClient } from '@devvit/web/server';
 import { ExtendedBook } from './types';
 
 export class BookCache {

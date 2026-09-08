@@ -1,7 +1,7 @@
 import { GraphQLClient } from 'graphql-request';
 import { jest, describe, it, expect, beforeEach, afterEach } from '@jest/globals';
 import { CommentGenerator } from '../src/CommentGenerator.js';
-import { RedisClient } from '@devvit/public-api';
+import type { RedisClient } from '@devvit/web/server';
 import * as dotenv from 'dotenv';
 import gatsbyResponse from './gatsby-response.json';
 import fountainResponse from './fountain.json';
@@ -22,18 +22,18 @@ describe('Hardcover', () => {
     totalIncrByCounter = 0;
 
     mockRedis = {
-      get: jest.fn().mockResolvedValue(null),
-      set: jest.fn().mockResolvedValue(undefined),
-      incrBy: jest.fn().mockImplementation((key: string, increment: number) => {
-        if (key.includes('total')) {
-          totalIncrByCounter += increment;
-          return Promise.resolve(totalIncrByCounter);
-        }
-        incrByCounter += increment;
-        return Promise.resolve(incrByCounter);
-      }),
-      watch: jest.fn().mockResolvedValue(undefined),
-      exec: jest.fn().mockResolvedValue(undefined),
+      get: jest.fn<RedisClient['get']>().mockResolvedValue(undefined),
+      set: jest.fn<RedisClient['set']>().mockResolvedValue('OK'),
+      incrBy: jest
+        .fn<RedisClient['incrBy']>()
+        .mockImplementation((key: string, increment: number) => {
+          if (key.includes('total')) {
+            totalIncrByCounter += increment;
+            return Promise.resolve(totalIncrByCounter);
+          }
+          incrByCounter += increment;
+          return Promise.resolve(incrByCounter);
+        }),
     } as unknown as jest.Mocked<RedisClient>;
 
     mockClient = {

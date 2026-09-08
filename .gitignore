@@ -8,6 +8,5 @@ yarn-error.log*
 .env
 src/gql/generated/*
 devvit.yaml
-devvit.json
 dist/
 .pnpm-store/

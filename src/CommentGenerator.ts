@@ -1,4 +1,4 @@
-import { RedisClient } from '@devvit/public-api';
+import type { RedisClient } from '@devvit/web/server';
 import { GraphQLClient } from 'graphql-request';
 import { BookFormatter } from './formatters/BookFormatter';
 import { FormatterFactory } from './formatters/FormatterFactory';

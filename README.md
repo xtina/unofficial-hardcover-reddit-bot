@@ -48,3 +48,30 @@ or
 They have a public API and nice [docs](https://docs.hardcover.app/api/getting-started/).
 
 Storygraph does not have a public API and Goodreads has shut down its public API.
+
+## Development
+
+The bot uses Devvit Web with an Express server. Comment and post subscriptions,
+permissions, and app settings are declared in `devvit.json`.
+
+1. Run `pnpm install`.
+2. On a fresh checkout, set `HARDCOVER_KEY` and `HARDCOVER_API_URL` in a local
+   `.env` file and run `pnpm codegen` to generate the GraphQL client. These values
+   are only for local code generation; `.env` is not deployed.
+3. Run `pnpm build` to type-check and bundle `dist/server/index.cjs`.
+4. Run `pnpm dlx devvit@0.14.2 playtest <test-subreddit>`. The CLI runs the
+   configured `pnpm dev` command to rebuild the server when source files change.
+5. Set the app-level `hardcoverApiKey` using Devvit's app settings. The
+   `hardcover-api-url` setting defaults to `https://api.hardcover.app/v1/graphql`.
+6. Submit a new comment such as `h{The Hobbit}` in the playtest subreddit.
+   Look for `TRIGGER FIRED:` in the playtest logs. Missing credentials and failed
+   trigger processing return HTTP 500 and log an error without printing secrets.
+
+`pnpm typecheck` uses TypeScript 7 (`typescript-native`). Jest uses the
+TypeScript 6 JavaScript compiler API through the `typescript` package alias.
+
+Run the focused migration regressions with:
+
+```sh
+pnpm test --runInBand test/server.test.ts test/hardcover.test.ts
+```
