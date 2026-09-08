@@ -33,6 +33,7 @@
     "@types/express": "^5.0.6",
     "@types/jest": "29.5.14",
     "@types/supertest": "^7.2.1",
+    "devvit": "0.14.2",
     "esbuild": "^0.28.2",
     "eslint": "9.39.5",
     "globals": "17.12.0",
